@@ -3,6 +3,7 @@
   font-family: "Roboto";
 }
 body {
+  background-color: #51e2f5;
   width: 100%;
   height: 50vh;
   display: flex;
@@ -17,6 +18,7 @@ body {
   gap: 20px;
 }
 .wrapper {
+  background-color: white;
   border-radius: 30px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -38,4 +40,20 @@ body {
   cursor: pointer;
   height: 200px;
   width: 200px;
+}
+.winner__player,
+.winner__computer {
+  background-color: #269f37;
+  color: white;
+  width: 80%;
+  text-align: center;
+  border-radius: 10px;
+  display: none;
+}
+
+.winner__player.active {
+  display: block;
+}
+.winner__computer.active {
+  display: block;
 }

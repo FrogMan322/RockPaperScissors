@@ -1,4 +1,6 @@
 const computerChouse = ["rock", "paper", "scissors"];
+const winnerPlayer = document.querySelector(".winner__player");
+const winnerComputer = document.querySelector(".winner__computer");
 const btns = Array.from(document.querySelectorAll(".choise__container"));
 const pcRandom = () => {
   const random = Math.floor(Math.random() * computerChouse.length);
@@ -13,7 +15,6 @@ btns.forEach((e) => {
     const playerChose = event.target.dataset.choise;
     const computerChose = pcRandom();
 
-    console.log(`Player:${playerChose}, PC:${computerChose}`);
     if (
       (playerChose === "rock" && computerChose === "scissors") ||
       (playerChose === "paper" && computerChose === "rock") ||
@@ -34,5 +35,10 @@ btns.forEach((e) => {
 
     scoreBoardPc.textContent = `PC Score:${computerScore}`;
     scoreBoardPlayer.textContent = `Player Score:${playerScore}`;
+    if (playerScore === 10) {
+      winnerPlayer.classList.add("active");
+    } else if (computerScore === 10) {
+      winnerComputer.classList.add("active");
+    }
   });
 });
