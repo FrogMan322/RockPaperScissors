@@ -1,4 +1,4 @@
-const computerChouse = ["rock", "paper", "scissors"];
+const computerChoose = ["rock", "paper", "scissors"];
 const winnerPlayer = document.querySelector(".winner__player");
 const winnerComputer = document.querySelector(".winner__computer");
 const modalOverlay = document.querySelector(".overlay");
@@ -8,14 +8,14 @@ const scoreBoardPlayer = document.getElementById("player__score");
 
 const btns = Array.from(document.querySelectorAll(".choise__container"));
 const pcRandom = () => {
-  const random = Math.floor(Math.random() * computerChouse.length);
-  return computerChouse[random];
+  const random = Math.floor(Math.random() * computerChoose.length);
+  return computerChoose[random];
 };
 let playerScore = 0;
 let computerScore = 0;
 btns.forEach((e) => {
   e.addEventListener("click", (event) => {
-    const playerChose = event.target.dataset.choise;
+    const playerChose = event.target.dataset.choice;
     const computerChose = pcRandom();
 
     if (
